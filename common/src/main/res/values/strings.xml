@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">common</string>
+    <string name="img_describe">图片描述</string>
+    <string name="loading">加载中</string>
+</resources>
