@@ -59,4 +59,11 @@ object Deps {
 
     //util_codex
     var util_code = "com.blankj:utilcodex:${Versions.util_code}"
+
+    //阿里路由 组件
+    val aroute = "com.alibaba:arouter-api:1.5.2"
+    val aroute_processor = "com.alibaba:arouter-compiler:1.5.2"
+
+    //微信mmkv
+    val mmkv = "com.tencent:mmkv-static:1.2.11"
 }

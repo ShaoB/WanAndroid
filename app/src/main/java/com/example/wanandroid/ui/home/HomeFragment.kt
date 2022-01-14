@@ -1,44 +1,20 @@
 package com.example.wanandroid.ui.home
 
-import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import android.widget.TextView
-import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
+import com.alibaba.android.arouter.launcher.ARouter
+import com.example.common.base.BaseVMFragment
+import com.example.login.ui.LoginActivity
 import com.example.wanandroid.R
 import com.example.wanandroid.databinding.FragmentHomeBinding
 
-class HomeFragment : Fragment() {
+class HomeFragment : BaseVMFragment<FragmentHomeBinding>() {
 
-  private lateinit var homeViewModel: HomeViewModel
-private var _binding: FragmentHomeBinding? = null
-  // This property is only valid between onCreateView and
-  // onDestroyView.
-  private val binding get() = _binding!!
+    override fun getLayoutId(): Int = R.layout.fragment_home
 
-  override fun onCreateView(
-    inflater: LayoutInflater,
-    container: ViewGroup?,
-    savedInstanceState: Bundle?
-  ): View? {
-    homeViewModel =
-            ViewModelProvider(this).get(HomeViewModel::class.java)
-
-    _binding = FragmentHomeBinding.inflate(inflater, container, false)
-    val root: View = binding.root
-
-    val textView: TextView = binding.textHome
-    homeViewModel.text.observe(viewLifecycleOwner, Observer {
-      textView.text = it
-    })
-    return root
-  }
-
-override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
+    override fun initView(view: View) {
+        mBinding.textHome.setOnClickListener(View.OnClickListener {
+            // 1. 应用内简单的跳转(通过URL跳转在'进阶用法'中)
+            ARouter.getInstance().build("/test/activity").navigation()
+        })
     }
 }

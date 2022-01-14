@@ -3,8 +3,10 @@ package com.example.wanandroid
 import android.os.Bundle
 import androidx.navigation.*
 import androidx.navigation.fragment.NavHostFragment
+import com.alibaba.android.arouter.facade.annotation.Route
 import com.example.common.base.BaseVMActivity
 import com.example.common.utils.FixFragmentNavigator
+import com.example.user.ui.UserFragment
 import com.example.wanandroid.databinding.ActivityMainBinding
 import com.example.wanandroid.ui.dashboard.DashboardFragment
 import com.example.wanandroid.ui.home.HomeFragment
@@ -92,6 +94,12 @@ class MainActivity : BaseVMActivity<ActivityMainBinding>() {
             NotificationsFragment::class.java.canonicalName ?: "notifications_fragment"
         destination3.label = resources.getString(R.string.title_notifications)
         navGraph.addDestination(destination3)
+
+        val userDestination = fragmentNavigator.createDestination()
+        userDestination.id = R.id.navigation_user
+        userDestination.className = UserFragment::class.java.canonicalName ?: "user_fragment"
+        userDestination.label = resources.getString(R.string.title_user)
+        navGraph.addDestination(userDestination)
 
         navGraph.startDestination = R.id.navigation_home
         return navGraph

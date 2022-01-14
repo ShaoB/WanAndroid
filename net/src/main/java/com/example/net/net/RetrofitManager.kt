@@ -80,7 +80,7 @@ class RetrofitManager private constructor() {
             //添加一个日志拦截器
             .addInterceptor(HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY))
             //添加请求头拦截器
-            .addInterceptor(headInterceptor)
+            //.addInterceptor(headInterceptor)
             .build()
     }
 

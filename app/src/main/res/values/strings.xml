@@ -9,4 +9,5 @@
     <string name="title_notifications">Notifications</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="title_activity_app">MainActivity</string>
+    <string name="title_user">我的</string>
 </resources>

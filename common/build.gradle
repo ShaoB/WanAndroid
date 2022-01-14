@@ -50,9 +50,10 @@ android {
 
 dependencies {
 
+    api project(":net")
+
     api(AndroidX.appcompat)
     api(AndroidX.constraint_layout)
-    api(AndroidX.core_ktx)
     api(AndroidX.navigation_ui_ktx)
     api(AndroidX.navigation_fragment_ktx)
     api(AndroidX.lifecycle_livedata_ktx)
@@ -64,11 +65,19 @@ dependencies {
     api(AndroidX.paging_runtime)
     api(AndroidX.swipe_refresh_layout)
 
-    api Kotlin.kotlin_stdlib
+    api(Kotlin.koin_core)
+    api(Kotlin.koin_core_ext)
+    api(Kotlin.koin_androidx_ext)
+    api(Kotlin.koin_androidx_scope)
+    api(Kotlin.koin_androidx_fragment)
+    api(Kotlin.koin_androidx_viewmodel)
 
     api(Deps.materia)
     api(Deps.glide)
     api(Deps.util_code)
+    api(Deps.aroute)
+    api(Deps.mmkv)
 
     kapt(Deps.glideCompiler)
+    kapt Deps.aroute_processor
 }

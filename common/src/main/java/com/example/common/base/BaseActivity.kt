@@ -12,12 +12,13 @@ open class BaseActivity : AppCompatActivity() {
 
     private lateinit var mLoadingDialog: LoadingDialog
 
-    override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
-        super.onCreate(savedInstanceState, persistentState)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
         mLoadingDialog = LoadingDialog(this)
 
         ActivityUtil.addActivity(this)
 
+        //设置透明状态栏
         StatusBarUtil.setTransparentForWindow(this)
     }
 
@@ -30,7 +31,7 @@ open class BaseActivity : AppCompatActivity() {
         mLoadingDialog.showDialog(this)
     }
 
-    fun dismissDialog() {
+    fun dismissLoading() {
         mLoadingDialog.dismissDialog()
     }
 }

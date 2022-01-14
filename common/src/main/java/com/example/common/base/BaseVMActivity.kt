@@ -19,6 +19,7 @@ abstract class BaseVMActivity<T : ViewDataBinding> : BaseActivity() {
         mBinding = DataBindingUtil.setContentView(this, getLayoutId())
         mBinding.lifecycleOwner = this
         initView(savedInstanceState)
+        initListener()
         initData()
         startObserver()
     }
@@ -32,6 +33,11 @@ abstract class BaseVMActivity<T : ViewDataBinding> : BaseActivity() {
      * 初始化布局
      */
     abstract fun initView(savedInstanceState: Bundle?)
+
+    /**
+     * 初始化事件
+     */
+    open fun initListener() {}
 
     /**
      * 初始化数据

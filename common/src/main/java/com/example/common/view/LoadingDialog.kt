@@ -50,6 +50,6 @@ class LoadingDialog(context: Context) : Dialog(context, R.style.LoadingDialog) {
     }
 
     fun dismissDialog() {
-        loadingDialog?.dismissDialog()
+        loadingDialog?.dismiss()
     }
 }

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="userItem"
+            type="com.example.user.viewmodel.UserItem" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.home.HomeFragment">
+
+        <ImageView
+            android:id="@+id/view_top_bg"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_200"
+            android:background="@color/theme"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:contentDescription="@string/img_describe" />
+
+        <com.example.common.view.CircleImageView
+            android:id="@+id/cir_user_img"
+            android:layout_width="@dimen/dp_60"
+            android:layout_height="@dimen/dp_60"
+            android:layout_marginStart="@dimen/dp_40"
+            android:background="@drawable/ic_user_un_authen"
+            app:layout_constraintBottom_toBottomOf="@id/view_top_bg"
+            app:layout_constraintLeft_toLeftOf="@id/view_top_bg"
+            app:layout_constraintTop_toTopOf="@id/view_top_bg" />
+
+        <TextView
+            android:id="@+id/tv_user_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_12"
+            android:layout_marginTop="@dimen/sp_10"
+            android:text="@{userItem.userName}"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_18"
+            app:layout_constraintLeft_toRightOf="@id/cir_user_img"
+            app:layout_constraintTop_toTopOf="@id/cir_user_img"
+            tools:text="去登录" />
+
+        <TextView
+            android:id="@+id/tv_btn_exit_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dp_50"
+            android:background="@drawable/shape_theme_bg_btn"
+            android:paddingLeft="@dimen/dp_60"
+            android:paddingTop="@dimen/dp_8"
+            android:paddingRight="@dimen/dp_60"
+            android:paddingBottom="@dimen/dp_8"
+            android:text="@string/quit_login"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_18"
+            android:visibility="@{userItem.MBtQuitIsShow?View.VISIBLE:View.GONE}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
