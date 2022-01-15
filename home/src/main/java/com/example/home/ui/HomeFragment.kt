@@ -1,11 +1,10 @@
-package com.example.wanandroid.ui.home
+package com.example.home.ui
 
 import android.view.View
 import com.alibaba.android.arouter.launcher.ARouter
 import com.example.common.base.BaseVMFragment
-import com.example.login.ui.LoginActivity
-import com.example.wanandroid.R
-import com.example.wanandroid.databinding.FragmentHomeBinding
+import com.example.home.R
+import com.example.home.databinding.FragmentHomeBinding
 
 class HomeFragment : BaseVMFragment<FragmentHomeBinding>() {
 

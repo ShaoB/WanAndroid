@@ -1,8 +1,6 @@
 package com.example.login.ui
 
 import android.os.Bundle
-import com.alibaba.android.arouter.facade.annotation.Autowired
-import com.alibaba.android.arouter.facade.annotation.Route
 import com.blankj.utilcode.util.ToastUtils
 import com.example.common.base.BaseVMActivity
 import com.example.common.bean.User

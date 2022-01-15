@@ -41,7 +41,7 @@ class RetrofitManager private constructor() {
     private var headInterceptor = Interceptor { chain ->
         val original = chain.request()
         val requestBuilder: Request.Builder = original.newBuilder()
-            .addHeader("token", "1563")
+            .addHeader("", "")
         chain.proceed(requestBuilder.build())
     }
 

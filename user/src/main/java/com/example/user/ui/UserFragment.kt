@@ -1,6 +1,7 @@
 package com.example.user.ui
 
 import android.view.View
+import android.webkit.CookieManager
 import com.example.common.base.BaseVMFragment
 import com.example.common.route.LoginServiceUtils
 import com.example.user.R
@@ -21,7 +22,8 @@ class UserFragment : BaseVMFragment<FragmentUserBinding>() {
         mBinding.userItem = UserItem()
 
         if (LoginServiceUtils.isLogin()) {
-
+            val userInfo = LoginServiceUtils.getUserInfo()
+            userInfo?.username
         } else {
             mBinding.cirUserImg.setBackgroundResource(R.drawable.ic_user_un_authen)
         }
@@ -45,6 +47,7 @@ class UserFragment : BaseVMFragment<FragmentUserBinding>() {
          * 退出登录
          */
         mBinding.tvBtnExitLogin.setOnClickListener {
+            CookieManager.getInstance().removeAllCookie()
             LoginServiceUtils.removeUserInfo()
             mBinding.userItem?.refresh()
         }

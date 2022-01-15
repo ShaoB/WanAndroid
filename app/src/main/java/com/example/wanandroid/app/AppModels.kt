@@ -1,5 +1,7 @@
 package com.example.wanandroid.app
 
+import com.example.home.di.homeModels
+import com.example.home.viewmodel.FaqModel
 import com.example.login.di.loginModel
 import okhttp3.internal.immutableListOf
 
@@ -9,4 +11,4 @@ import okhttp3.internal.immutableListOf
  *    desc   :
  */
 
-val appModule = immutableListOf(loginModel)
+val appModule = immutableListOf(loginModel, homeModels)

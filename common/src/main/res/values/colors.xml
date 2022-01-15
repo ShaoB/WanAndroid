@@ -54,6 +54,8 @@
     <color name="colorBrownLight">#C9A375</color>
     <color name="colorPink">#FFEF78D5</color>
 
+    <color name="transparent">#00000000</color>
+
 
     <color name="bg">#F0F0F0</color>
 </resources>

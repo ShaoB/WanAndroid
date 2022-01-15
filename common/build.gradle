@@ -77,6 +77,11 @@ dependencies {
     api(Deps.util_code)
     api(Deps.aroute)
     api(Deps.mmkv)
+    api(Deps.refresh_layout_kernel)
+    api(Deps.refresh_footer_classics)
+    api(Deps.refresh_header_classics)
+    api(Deps.refresh_header_material)
+    api(Deps.BRVAH)
 
     kapt(Deps.glideCompiler)
     kapt Deps.aroute_processor

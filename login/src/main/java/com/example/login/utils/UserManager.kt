@@ -37,5 +37,7 @@ object UserManager {
 
     fun removeUser() {
         SpUtils.removeKey(USER_DATA)
+        //这里想一想怎么清空 再触发一次
+        //liveDataUserInfo.ob
     }
 }

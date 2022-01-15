@@ -66,4 +66,13 @@ object Deps {
 
     //微信mmkv
     val mmkv = "com.tencent:mmkv-static:1.2.11"
+
+    //smart_refresh_layout
+    val refresh_layout_kernel = "com.scwang.smart:refresh-layout-kernel:2.0.3"      //核心必须依赖
+    val refresh_header_classics = "com.scwang.smart:refresh-header-classics:2.0.3"    //经典刷新头
+    val refresh_header_material = "com.scwang.smart:refresh-header-material:2.0.3"
+    val refresh_footer_classics = "com.scwang.smart:refresh-footer-classics:2.0.3"    //经典加载
+
+    // base adapter
+    val BRVAH = "com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.4"
 }

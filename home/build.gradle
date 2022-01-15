@@ -1,9 +1,8 @@
 import plugin.BuildVersion
-import plugin.AndroidX
 import plugin.Deps
 
 plugins {
-    id 'com.android.application'
+    id 'com.android.library'
     id 'kotlin-android'
     id 'kotlin-kapt'
 }
@@ -19,15 +18,11 @@ android {
     buildToolsVersion BuildVersion.buildToolsVersion
 
     defaultConfig {
-        applicationId BuildVersion.applicationId
         minSdkVersion BuildVersion.minSdkVersion
         targetSdkVersion BuildVersion.targetSdkVersion
-        versionCode BuildVersion.versionCode
-        versionName BuildVersion.versionName
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        /**添加多 dex分包支持*/
-        multiDexEnabled true
+        consumerProguardFiles "consumer-rules.pro"
     }
 
     buildTypes {
@@ -36,7 +31,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-    
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -55,13 +50,5 @@ android {
 dependencies {
 
     implementation project(":common")
-    implementation project(":user")
-    implementation project(":login")
-    implementation project(":home")
-    implementation AndroidX.multidex
-    implementation 'androidx.appcompat:appcompat:1.2.0'
-    implementation 'com.google.android.material:material:1.2.1'
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
     kapt Deps.aroute_processor
 }
